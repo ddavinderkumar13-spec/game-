@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Sort Puzzle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="buttonSound" src="sounds/click.mp3"></audio>
+  <audio id="clickSound" src="sounds/bottle-click.mp3"></audio> 
+  <audio id="levelCompleteSound" src="sounds/level-up.mp3"></audio>
+  <audio id="bgMusic" src="sounds/BG music.mp3" loop></audio>
+<button onclick="playButtonClickSound(); toggleMusic()" id="musicButton">🔊BG musicButton</button>
+<div class="header">
+    <h1>🧪color Puzzle🧩</h1>
+    <div class="info-bar">
+      <span id="timer">⏰Time: 0s</span>
+      <span id="level">level:1</span>  
+    </div>
+  </div>
+
+  <div id="game"></div>
+  
+  <div id="levelUpMessage">🎉 Level Up! 🎉</div>
+
+  <div id="mainMenu">
+  <h1>🧪 Water Sort Puzzle 🎮</h1>
+  <button onclick="playButtonClickSound(); startGame()">▶️ Start Game</button>
+  <button onclick="playButtonClickSound(); showHowToPlay()">ℹ️ How to Play</button>
+</div>
+
+<!-- How to Play Section -->
+<div id="howToPlay" style="display: none;"> 
+  <h2>📘How to play:</h2>
+  <p>🧴Pour color from one bottle to another until all bottles have the same color🌈</p>
+  <button onclick="playButtonClickSound(); backToMenu()">🔙 Back to Menu</button>
+</div>
+
+  <div class="controls">
+    <button onclick="playButtonClickSound(); restartGame()">🔄 Replay</button> 
+    <button onclick="playButtonClickSound(); undoMove()">↩️ Back</button>
+  </div>
+
+  <script>
+  function playButtonClickSound() {
+    const sound = document.getElementById("buttonSound");
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play();
+    }
+  }
+</script>
+
+  <script src="script.js"></script>
+  <button onclick="playButtonClickSound(); resetProgress()">🗑️ Reset Game</button>
+  <button onclick="playButtonClickSound(); cycleBackground()">🎨Background color</button>
+  <audio id="click" src="C:\Users\Admin\Desktop\Water Short Puzzle Game\sounds/click.wav"></audio>
+<audio id="pourSound" src="sounds/pour.wav"></audio>
+<audio id="completeSound" src="sounds/complete.wav"></audio>
+<audio id="buttonSound" src="sounds/button.wav"></audio>
+</body>
+</html>
+            
